@@ -1,0 +1,20 @@
+<div class="row">
+  <div id="newsfeed" class="col-lg-6">
+    <h4><%= fa_icon "newspaper-o" %> NEWSFEED</h4>
+    <div id="activities">
+      <% if @activities.empty? %>
+        <div class="well">
+          <%= render('shared/no_resource', resources: 'Activities') %>
+        </div>
+      <% else %>
+        <%= render_activities(@activities, layout: '/shared/activity') %>
+      <% end %>
+    </div>
+    <%= render 'shared/paginate', resources: @activities %>
+  </div>
+  <div id="intro" class="col-lg-6">
+    <h1>Socially</h1>
+    <p>Socially is a sample social networking app written using <%= fa_icon 'diamond' %> Ruby on Rails.</p>
+    <p>You can check the source code on <a href="https://github.com/rishabhs95/socially"><%= fa_icon 'github' %> Github</a>.</p>
+  </div>
+</div>
